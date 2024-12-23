@@ -66,11 +66,11 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 
 #### Authentication System
 
-4. **Login Page:** When you click the login button on the navbar it redirects to the login page. You have to use a password and email-based authentication to log in. The login page will have-    
+<!-- 4. **Login Page:** When you click the login button on the navbar it redirects to the login page. You have to use a password and email-based authentication to log in. The login page will have-    
    1. Email   
    2. Password   
    3. Google login/ GitHub-  implement any of one   
-   4. A link that will redirect to the Register page   
+   4. A link that will redirect to the Register page    -->
 5. **Register Page:** You have to use a password and email-based authentication to register. The Register page will have the following \-   
    5. Name   
    6. Email   
@@ -86,7 +86,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 #### Home Page 
 
 6.  **Home Page Features:**  
-   * **Banner/Slider:** Add a slider (you can use any type of static slider/carousel)  with a minimum of 3 slides and meaningful information.  
+   <!-- * **Banner/Slider:** Add a slider (you can use any type of static slider/carousel)  with a minimum of 3 slides and meaningful information.   -->
    * **Latest Find & Lost Items Section:** Showcase 6 find & lost item posts [sorted](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/) by the most recent date. Each card should display:  
      1. Choose which information you want to show  
      2. *View Details* button (it will redirect you to the **Details Page**)   
