@@ -50,14 +50,20 @@ const Navbar = () => {
                 {
                     user ? (
                         <div className="dropdown dropdown-end">
-                            <div tabIndex={0} role="button" className="">
+                            <div title={user?.displayName} tabIndex={0} role="button" className="">
                                 <img className='h-10 w-10 rounded-full' src={user?.photoURL} alt="" />
                             </div>
                             <ul
                                 tabIndex={0}
                                 className="menu dropdown-content bg-base-100 rounded-box w-52 p-2 shadow">
                                 <li>
-                                    <Link to="/profile">Profile</Link>
+                                    <NavLink to="/add-lost-and-found-items">Add Lost & Found Item Page</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/all-recovered-items">All Recovered Items Page</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/manage-my-items">Manage My Items Page</NavLink>
                                 </li>
                                 <li>
                                     <button onClick={handleLogOut}>Logout</button>
