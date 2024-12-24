@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
+    const { registerUser, googleLogin, setUser, updateUser } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -11,11 +12,33 @@ const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        // Handle registration logic here
+        // Handle register logic here
+        try {
+            registerUser(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    setUser(user);
+                    updateUser(name, photoUrl);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const handleGoogleLogin = () => {
         // Handle Google login logic here
+        googleLogin()
+            .then((userCredential) => {
+                const user = userCredential.user;
+                setUser(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            }
+            );
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
