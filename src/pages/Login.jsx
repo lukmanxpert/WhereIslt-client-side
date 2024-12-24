@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Login = () => {
-    const { googleLogin, setUser } = useContext(AuthContext);
+    const { googleLogin, setUser, signInUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleGoogleLogin = async () => {
         try {
@@ -16,12 +16,32 @@ const Login = () => {
         } catch (error) {
             console.error(error);
         }
-    }
+    };
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        try {
+            signInUser(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    setUser(user);
+                    toast.success('Login successful');
+                    navigate('/');
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        } catch (error) {
+            toast.error('error.message');
+            console.error(error);
+        }
+    };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
                 <h2 className="text-2xl font-bold text-center">Login</h2>
-                <form className="space-y-4">
+                <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                             Email
@@ -54,14 +74,14 @@ const Login = () => {
                     >
                         Login
                     </button>
-                <div className="text-center">
-                    <p className="text-sm text-gray-600">
-                        Don't have an account?{' '}
-                        <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
-                            Register
-                        </Link>
-                    </p>
-                </div>
+                    <div className="text-center">
+                        <p className="text-sm text-gray-600">
+                            Don't have an account?{' '}
+                            <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                Register
+                            </Link>
+                        </p>
+                    </div>
                 </form>
                 <div className="flex items-center justify-center mt-4">
                     <button onClick={handleGoogleLogin}
