@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const { googleLogin, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleGoogleLogin = async () => {
         try {
             const userCredential = await googleLogin();
             setUser(userCredential.user);
-            Navigate('/home');
+            toast.success('Login successful');
+            navigate('/');
         } catch (error) {
             console.error(error);
         }
