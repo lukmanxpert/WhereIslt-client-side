@@ -45,7 +45,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 
 --- -->
 
-#### Layout & Page Structure
+<!-- #### Layout & Page Structure -->
 
 <!-- 1.  **Navbar:** -->
 
@@ -56,7 +56,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
   <!-- - If not logged in, show a _Login_ button. -->
   <!-- - If logged in, show the user's profile picture and _Logout_ button. -->
   <!-- - On hovering over the profile picture, show the user’s display name. -->
-- **Profile Picture (Dropdown):**
+<!-- - **Profile Picture (Dropdown):** -->
   <!-- - Add Lost & Found Item Page **(Private/Protected Route)** -->
   <!-- - All Recovered Items Page **(Private/Protected Route)** -->
   <!-- - Manage My Items Page**(Private/Protected Route)** -->
@@ -65,7 +65,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 
 ---
 
-#### Authentication System
+<!-- #### Authentication System -->
 
 <!-- 4. **Login Page:** When you click the login button on the navbar it redirects to the login page. You have to use a password and email-based authentication to log in. The login page will have-
    1. Email
@@ -73,7 +73,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
    3. Google login/ GitHub-  implement any of one
    4. A link that will redirect to the Register page    -->
 
-5. **Register Page:** You have to use a password and email-based authentication to register. The Register page will have the following \-  
+<!-- 5. **Register Page:** You have to use a password and email-based authentication to register. The Register page will have the following \-  
    5. Name  
    6. Email  
    7. photoURL  
@@ -84,7 +84,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 - If any of this isn’t fulfilled it will show an error message /toast
 - After successful login or Register you need to show toast/sweet alert
 
----
+--- -->
 
 #### Home Page
 

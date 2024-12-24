@@ -30,6 +30,7 @@ const Login = () => {
                     navigate('/');
                 })
                 .catch((error) => {
+                    toast.error(error.message);
                     console.log(error);
                 });
         } catch (error) {
