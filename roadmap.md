@@ -57,9 +57,9 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
   <!-- - If logged in, show the user's profile picture and _Logout_ button. -->
   <!-- - On hovering over the profile picture, show the user’s display name. -->
 - **Profile Picture (Dropdown):**
-  - Add Lost & Found Item Page **(Private/Protected Route)**
-  - All Recovered Items Page **(Private/Protected Route)**
-  - Manage My Items Page**(Private/Protected Route)**
+  <!-- - Add Lost & Found Item Page **(Private/Protected Route)** -->
+  <!-- - All Recovered Items Page **(Private/Protected Route)** -->
+  <!-- - Manage My Items Page**(Private/Protected Route)** -->
     <!-- 2. **Main Section:**  Main Section will show different pages based on routes.     -->
     <!-- 3. **Footer:** A Footer with all relevant information and eye-catching design. -->
 

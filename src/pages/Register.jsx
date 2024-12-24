@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { registerUser, googleLogin, setUser, updateUser } = useContext(AuthContext);
@@ -13,6 +14,15 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
         // Handle register logic here
+        if (password.length < 6) {
+            toast.error('Password should be at least 6 characters');
+            return;
+        }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).+$/;
+        if (!passwordRegex.test(password)) {
+            toast.error('Password must contain at least one uppercase letter, one lowercase letter, and one special character');
+            return;
+        }
         try {
             registerUser(email, password)
                 .then((userCredential) => {
