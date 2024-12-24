@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { use } from 'react';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
     const links = <>
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/lost-and-found-items">Lost & Found Items</NavLink>
@@ -38,9 +41,29 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div>
-                    <Link to="/login" className="btn hover-btn text-[#FF9800] bg-transparent hover:bg-transparent hover:border-[#FF9800]">LogIn</Link>
-                </div>
+                {
+                    user ? (
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="">
+                                <img className='h-10 w-10 rounded-full' src={user?.photoURL} alt="" />
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu dropdown-content bg-base-100 rounded-box w-52 p-2 shadow">
+                                <li>
+                                    <Link to="/profile">Profile</Link>
+                                </li>
+                                <li>
+                                    <Link to="/logout">Logout</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    ) : (
+                        <div>
+                            <Link to="/login" className="btn hover-btn text-[#FF9800] bg-transparent hover:bg-transparent hover:border-[#FF9800]">LogIn</Link>
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

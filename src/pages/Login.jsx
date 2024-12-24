@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
+    const { googleLogin, setUser } = useContext(AuthContext);
+    const handleGoogleLogin = async () => {
+        try {
+            const userCredential = await googleLogin();
+            setUser(userCredential.user);
+            Navigate('/home');
+        } catch (error) {
+            console.error(error);
+        }
+    }
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
@@ -50,7 +61,7 @@ const Login = () => {
                 </div>
                 </form>
                 <div className="flex items-center justify-center mt-4">
-                    <button
+                    <button onClick={handleGoogleLogin}
                         type="button"
                         className="flex items-center px-4 py-2 font-semibold text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-200"
                     >
