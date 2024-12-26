@@ -3,6 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { registerUser, googleLogin, setUser, updateUser } = useContext(AuthContext);
@@ -52,6 +53,9 @@ const Register = () => {
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <Helmet>
+                <title>Register | WhereIsIt</title>
+            </Helmet>
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold text-center">Register</h2>
                 <form onSubmit={handleRegister} className="space-y-4">

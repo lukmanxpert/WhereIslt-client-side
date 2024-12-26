@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const AddLostAndFoundItems = () => {
     const { user } = useContext(AuthContext);
@@ -54,6 +55,9 @@ const AddLostAndFoundItems = () => {
 
     return (
         <div className="p-6 max-w-2xl mx-auto bg-white shadow-md rounded-lg">
+            <Helmet>
+                <title>Add Lost and Found Items | WhereIslt</title>
+            </Helmet>
             <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
                 Add Lost or Found Item
             </h1>

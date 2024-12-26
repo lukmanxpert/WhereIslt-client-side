@@ -1,5 +1,6 @@
 // LostAndFoundItemsPage.jsx
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const LostAndFound = () => {
@@ -29,6 +30,9 @@ const LostAndFound = () => {
 
     return (
         <div className="p-4 md:p-8 lg:p-12">
+            <Helmet>
+                <title>Lost and Found Items | WhereIslt</title>
+            </Helmet>
             <h1 className="text-2xl font-bold text-center mb-6">Lost & Found Items</h1>
 
             {items.length === 0 ? (

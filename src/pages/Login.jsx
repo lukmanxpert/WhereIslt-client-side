@@ -3,6 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { googleLogin, setUser, signInUser } = useContext(AuthContext);
@@ -40,6 +41,9 @@ const Login = () => {
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+            <Helmet>
+                <title>Login | WhereIsIt</title>
+            </Helmet>
             <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
                 <h2 className="text-2xl font-bold text-center">Login</h2>
                 <form onSubmit={handleLogin} className="space-y-4">

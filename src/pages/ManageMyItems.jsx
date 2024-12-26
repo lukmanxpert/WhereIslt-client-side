@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const ManageMyItems = () => {
     const { user } = useContext(AuthContext);
@@ -99,6 +100,9 @@ const ManageMyItems = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Manage My Items | WhereIslt</title>
+            </Helmet>
             <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
                 <h1 className="text-3xl font-bold text-center mb-6">Manage My Items</h1>
 

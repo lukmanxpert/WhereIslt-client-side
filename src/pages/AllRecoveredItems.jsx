@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const AllRecoveredItems = () => {
     const { user } = useContext(AuthContext);
@@ -32,6 +33,9 @@ const AllRecoveredItems = () => {
     console.log(recoveredItems);
     return (
         <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
+            <Helmet>
+                <title>All Recovery Items | WhereIslt</title>
+            </Helmet>
             <h1 className="text-3xl font-bold text-center mb-6">All Recovered Items</h1>
 
             {recoveredItems.length === 0 ? (
