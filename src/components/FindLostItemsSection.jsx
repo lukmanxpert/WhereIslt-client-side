@@ -8,7 +8,6 @@ const FindLostItemsSection = () => {
             .then((response) => response.json())
             .then((data) => setItems(data));
     }, []);
-    console.log(items);
     return (
         <div className="p-6 bg-gray-50">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">

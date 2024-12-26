@@ -30,7 +30,6 @@ const AllRecoveredItems = () => {
             </div>
         );
     }
-    console.log(recoveredItems);
     return (
         <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
             <Helmet>

@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from '../components/Banner';
 import FindLostItemsSection from '../components/FindLostItemsSection';
 import { Helmet } from 'react-helmet';
+import Testimonials from '../components/Testimonials';
+import Statistics from '../components/Statistics';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <FindLostItemsSection></FindLostItemsSection>
+            <Testimonials></Testimonials>
+            <Statistics></Statistics>
         </div>
     );
 };
