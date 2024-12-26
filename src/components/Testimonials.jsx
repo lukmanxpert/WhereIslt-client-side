@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
     const testimonials = [
@@ -46,7 +46,26 @@ const Testimonials = () => {
                 >
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index}>
-                            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                            <motion.div
+                                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                                initial={{
+                                    opacity: 0,
+                                    y: 50,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                transition={{
+                                    duration: 0.6,
+                                    ease: "easeOut",
+                                }}
+                                whileHover={{
+                                    y: -10,
+                                    scale: 1.05,
+                                    transition: { type: "spring", stiffness: 300, damping: 10 },
+                                }}
+                            >
                                 <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
@@ -58,7 +77,7 @@ const Testimonials = () => {
                                     {"★".repeat(Math.floor(testimonial.rating))}
                                     {testimonial.rating % 1 > 0 && "☆"}
                                 </div>
-                            </div>
+                            </motion.div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

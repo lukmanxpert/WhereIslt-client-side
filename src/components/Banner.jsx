@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Import Swiper styles
-// import "swiper/swiper-bundle.min.css";
 import 'swiper/css';
 
 const Banner = () => {
@@ -25,6 +24,13 @@ const Banner = () => {
         },
     ];
 
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const contentVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
     return (
         <div className="w-full">
             <Swiper
@@ -35,6 +41,7 @@ const Banner = () => {
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
                 className="my-swiper"
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
@@ -43,10 +50,30 @@ const Banner = () => {
                             style={{ backgroundImage: `url(${slide.image})` }}
                         >
                             <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white p-6">
-                                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
-                                    {slide.title}
-                                </h1>
-                                <p className="text-base md:text-lg lg:text-xl">{slide.description}</p>
+                                <AnimatePresence>
+                                    {activeIndex === index && (
+                                        <>
+                                            <motion.h1
+                                                className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4"
+                                                variants={contentVariants}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="hidden"
+                                            >
+                                                {slide.title}
+                                            </motion.h1>
+                                            <motion.p
+                                                className="text-base md:text-lg lg:text-xl"
+                                                variants={contentVariants}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="hidden"
+                                            >
+                                                {slide.description}
+                                            </motion.p>
+                                        </>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         </div>
                     </SwiperSlide>
