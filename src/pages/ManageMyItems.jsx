@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const ManageMyItems = () => {
     const { user } = useContext(AuthContext);
@@ -17,6 +18,30 @@ const ManageMyItems = () => {
                 console.error("Error fetching items:", error);
             });
     }, []);
+
+    const handleDelete = (id) => {
+        toast(
+            (t) => (
+                <span className="flex gap-2 items-center">
+                    <p>Are you sure?</p>
+                    <div className="flex gap-2">
+                        <button className="text-green-600 font-bold hover:shadow-lg" onClick={() => toast.dismiss(t.id)}>Dismiss</button>
+                        <button className="text-red-600 font-bold hover:shadow-lg" onClick={() => {
+                            axios.delete(`${import.meta.env.VITE_serverUrl}/delete-item/${id}`)
+                                .then((response) => {
+                                    console.log(response.data);
+                                    setItems((prevItems) => prevItems.filter((item) => item._id !== id));
+                                })
+                                .catch((error) => {
+                                    console.error("Error deleting item:", error);
+                                });
+                            toast.dismiss(t.id);
+                        }}>Delete</button>
+                    </div>
+                </span >
+            )
+        );
+    };
 
     console.log(items);
 
@@ -48,7 +73,7 @@ const ManageMyItems = () => {
                                             <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
                                                 Update
                                             </button>
-                                            <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                                            <button onClick={() => handleDelete(item._id)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
                                                 Delete
                                             </button>
                                         </div>
