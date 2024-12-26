@@ -31,6 +31,7 @@ const ManageMyItems = () => {
                                 .then((response) => {
                                     console.log(response.data);
                                     setItems((prevItems) => prevItems.filter((item) => item._id !== id));
+                                    toast.success("Item deleted successfully");
                                 })
                                 .catch((error) => {
                                     console.error("Error deleting item:", error);
