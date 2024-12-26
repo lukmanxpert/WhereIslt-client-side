@@ -108,8 +108,8 @@ const PostDetailsPage = () => {
       </div>
       <div className="mt-8 text-center">
         {item?.type === "Lost" ? (
-          <button onClick={() => document.getElementById('my_modal_4').showModal()} className="px-8 py-3 bg-green-500 text-white font-bold rounded-md hover:bg-green-600 transition">
-            Found This!
+          <button disabled={isRecovered == true} onClick={() => document.getElementById('my_modal_4').showModal()} className={`px-8 py-3 ${isRecovered == true ? 'bg-gray-300 hover:bg-gray-300' : 'bg-blue-500'} text-white font-bold rounded-md hover:bg-blue-600 transition`}>
+            {isRecovered == true ? 'Already Recovered' : 'Found This!'}
           </button>
         ) : (
           <button disabled={isRecovered == true} onClick={() => document.getElementById('my_modal_4').showModal()} className={`px-8 py-3 ${isRecovered == true ? 'bg-gray-300 hover:bg-gray-300' : 'bg-blue-500'} text-white font-bold rounded-md hover:bg-blue-600 transition`}>
