@@ -1,11 +1,13 @@
 // LostAndFoundItemsPage.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const LostAndFound = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_serverUrl}/posts`)
@@ -54,7 +56,7 @@ const LostAndFound = () => {
                             <p className="text-gray-500 mb-4">Type: {item.type}</p>
 
                             <Link
-                                to={`/details/${item._id}`}
+                                to={`${user ? `/details/${item._id}` : "/login"}`}
                                 className="bg-blue-500 text-white py-2 px-4 rounded text-center hover:bg-blue-600 transition"
                             >
                                 View Details

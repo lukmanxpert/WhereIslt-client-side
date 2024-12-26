@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const FindLostItemsSection = () => {
     const [items, setItems] = useState([]);
+    const { user } = useContext(AuthContext);
     useEffect(() => {
         fetch(`${import.meta.env.VITE_serverUrl}/latest-posts`)
             .then((response) => response.json())
@@ -34,7 +36,7 @@ const FindLostItemsSection = () => {
                             <p className="text-xs text-gray-500 mt-2 mb-4">
                                 {new Date(item.date).toLocaleDateString()}
                             </p>
-                            <Link to={`/details/${item._id}`} className="mt-4 px-4 py-2 bg-transparent hover:scale-105 text-[#FF9800] font-bold rounded-md border-2 border-[#FF9800] transition">
+                            <Link to={`${user ? `/details/${item._id}` : '/login'}`} className="mt-4 px-4 py-2 bg-transparent hover:scale-105 text-[#FF9800] font-bold rounded-md border-2 border-[#FF9800] transition">
                                 View Details
                             </Link>
                         </div>
