@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import { FaTable, FaThLarge } from "react-icons/fa";
 
 const AllRecoveredItems = () => {
     const { user } = useContext(AuthContext);
     const [recoveredItems, setRecoveredItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isTableView, setIsTableView] = useState(true);
 
     useEffect(() => {
         if (user?.email) {
@@ -30,18 +32,39 @@ const AllRecoveredItems = () => {
             </div>
         );
     }
+
     return (
         <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
             <Helmet>
                 <title>All Recovery Items | WhereIslt</title>
             </Helmet>
-            <h1 className="text-3xl font-bold text-center mb-6">All Recovered Items</h1>
+            <div className="flex justify-between items-center mb-6">
+                <h1 className="text-3xl font-bold">All Recovered Items</h1>
+                <div className="flex space-x-2">
+                    <button
+                        onClick={() => setIsTableView(true)}
+                        className={`p-2 rounded-full ${isTableView ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-600"
+                            } hover:bg-blue-600 hover:text-white transition`}
+                        title="Switch to Table View"
+                    >
+                        <FaTable size={20} />
+                    </button>
+                    <button
+                        onClick={() => setIsTableView(false)}
+                        className={`p-2 rounded-full ${!isTableView ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-600"
+                            } hover:bg-blue-600 hover:text-white transition`}
+                        title="Switch to Card View"
+                    >
+                        <FaThLarge size={20} />
+                    </button>
+                </div>
+            </div>
 
             {recoveredItems.length === 0 ? (
                 <p className="text-center text-gray-500">
                     No recovered items found. Start reporting lost and found items!
                 </p>
-            ) : (
+            ) : isTableView ? (
                 <div className="overflow-x-auto">
                     <table className="table-auto w-full border-collapse border border-gray-200">
                         <thead>
@@ -65,6 +88,20 @@ const AllRecoveredItems = () => {
                             ))}
                         </tbody>
                     </table>
+                </div>
+            ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {recoveredItems.map((item) => (
+                        <div
+                            key={item._id}
+                            className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition"
+                        >
+                            <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                            <p className="text-gray-700 mb-1">Category: {item.category}</p>
+                            <p className="text-gray-700 mb-1">Location: {item.location}</p>
+                            <p className="text-gray-500">Recovered Date: {item.date}</p>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
