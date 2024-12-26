@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
@@ -11,7 +11,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [photoUrl, setPhotoUrl] = useState('');
-
+    const navigate = useNavigate();
     const handleRegister = (e) => {
         e.preventDefault();
         // Handle register logic here
@@ -30,6 +30,8 @@ const Register = () => {
                     const user = userCredential.user;
                     setUser(user);
                     updateUser(name, photoUrl);
+                    toast.success('Registration successful');
+                    navigate('/');
                 })
                 .catch((error) => {
                     console.log(error);
@@ -45,6 +47,7 @@ const Register = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 setUser(user);
+                navigate('/');
             })
             .catch((error) => {
                 console.log(error);
