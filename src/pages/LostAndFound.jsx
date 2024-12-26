@@ -51,7 +51,7 @@ const LostAndFound = () => {
                             />
                             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                             <p className="text-gray-700 mb-2">Location: {item.location}</p>
-                            <p className="text-gray-500 mb-4">Type: {item.postType}</p>
+                            <p className="text-gray-500 mb-4">Type: {item.type}</p>
 
                             <Link
                                 to={`/details/${item._id}`}
