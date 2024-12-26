@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AddLostAndFoundItems from "../pages/AddLostAndFoundItems";
 import AllRecoveredItems from "../pages/allRecoveredItems";
 import ManageMyItems from "../pages/ManageMyItems";
+import PostDetailsPage from "../pages/PostDetailsPage";
 
 const router = createBrowserRouter([
     {
@@ -41,12 +42,16 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><AddLostAndFoundItems></AddLostAndFoundItems></PrivateRoutes>
             },
             {
-                path: "all-recovered-items",
+                path: "/all-recovered-items",
                 element: <PrivateRoutes><AllRecoveredItems></AllRecoveredItems></PrivateRoutes>
             },
             {
                 path: "/manage-my-items",
                 element: <PrivateRoutes><ManageMyItems></ManageMyItems></PrivateRoutes>
+            },
+            {
+                path: "/details/:id",
+                element: <PrivateRoutes><PostDetailsPage></PostDetailsPage></PrivateRoutes>
             }
         ]
     }

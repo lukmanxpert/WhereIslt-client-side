@@ -19,6 +19,7 @@ const AddLostAndFoundItems = () => {
             name: user?.displayName || "",
             email: user?.email || "",
         },
+        recovered: false,
     };
 
     const [formData, setFormData] = useState(initialFormData);

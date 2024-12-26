@@ -91,10 +91,10 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 6.  **Home Page Features:**
 <!-- * **Banner/Slider:** Add a slider (you can use any type of static slider/carousel)  with a minimum of 3 slides and meaningful information.   -->
 
-- **Latest Find & Lost Items Section:** Showcase 6 find & lost item posts [sorted](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/) by the most recent date. Each card should display:
+<!-- - **Latest Find & Lost Items Section:** Showcase 6 find & lost item posts [sorted](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/) by the most recent date. Each card should display:
   1.  Choose which information you want to show
-  2.  _View Details_ button (it will redirect you to the **Details Page**)
-  3.  **See all button:** Below the 6 cards, there will be a see all button that will redirect the user to the **Lost & Found Items Page**.
+  2.  _View Details_ button (it will redirect you to the **Details Page**) -->
+  <!-- 3.  **See all button:** Below the 6 cards, there will be a see all button that will redirect the user to the **Lost & Found Items Page**. -->
 - **Extra Sections:** Add 2 relevant and meaningful extra sections on the Home page.
 - Implement framer motion in your Home page.
 
@@ -102,7 +102,7 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
 
 #### Other Requirements Guideline
 
-7. ##### **Add Lost & Found Item Page: ( Private Route): /addItems**
+<!-- 7. ##### **Add Lost & Found Item Page: ( Private Route): /addItems**
 
    A private page where users can submit details about lost items through a form:
 
@@ -114,14 +114,14 @@ If your Deployment is not okay you will get 0 and may miss the chance of our upc
    - Location where the item was lost or found
    - Date Lost or found (use [React Datepicker](https://reactdatepicker.com/))
    - Contact Information (pre-filled with logged-in user details- displayName, email).
-   - **Add Post** button (store data in the items collection in the database and show a success toast).
+   - **Add Post** button (store data in the items collection in the database and show a success toast). -->
 
 8. ##### **Post Details Pages:( Private Route): /items/:id**
 
-- Display all data related to a lost or found item.
+<!-- - Display all data related to a lost or found item.
 - Include a button: (it will be conditional based on **post types** )
   - For Post type \=\> Lost: **Found This\!**
-  - For Post type \=\> Found: **This is Mine\!**
+  - For Post type \=\> Found: **This is Mine\!** -->
 - Clicking on the button it will open a modal and will take all the information of the item includes-
   - Recovered location (where it was given/received to original owner)
   - Date (In which date it was given/received to original owner) (use [React Datepicker](https://reactdatepicker.com/))
