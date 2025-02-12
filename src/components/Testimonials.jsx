@@ -29,9 +29,9 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="bg-gray-100 py-10">
+        <section className="bg-light_bg dark:bg-dark_bg py-10 ">
             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-2xl font-bold mb-6">What Our Users Say</h2>
+                <h2 className="text-2xl font-bold mb-6 dark:text-white">What Our Users Say</h2>
                 <Swiper
                     modules={[Navigation, Pagination]}
                     navigation
@@ -47,7 +47,7 @@ const Testimonials = () => {
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index}>
                             <motion.div
-                                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                                className="bg-light_bg dark:bg-dark_bg p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
                                 initial={{
                                     opacity: 0,
                                     y: 50,
@@ -71,8 +71,8 @@ const Testimonials = () => {
                                     alt={testimonial.name}
                                     className="w-16 h-16 mx-auto rounded-full mb-4"
                                 />
-                                <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                                <p className="text-gray-600 mt-2">{testimonial.feedback}</p>
+                                <h3 className="text-lg dark:text-white font-semibold">{testimonial.name}</h3>
+                                <p className="text-gray-600 mt-2 dark:text-gray-100">{testimonial.feedback}</p>
                                 <div className="text-yellow-500 mt-2">
                                     {"★".repeat(Math.floor(testimonial.rating))}
                                     {testimonial.rating % 1 > 0 && "☆"}
