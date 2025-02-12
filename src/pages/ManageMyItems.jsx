@@ -99,11 +99,11 @@ const ManageMyItems = () => {
 
 
     return (
-        <div>
+        <div className="bg-light_bg dark:bg-dark_bg">
             <Helmet>
                 <title>Manage My Items | WhereIslt</title>
             </Helmet>
-            <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
+            <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50 dark:bg-dark_bg">
                 <h1 className="text-3xl font-bold text-center mb-6">Manage My Items</h1>
 
                 {items.length === 0 ? (
@@ -112,20 +112,20 @@ const ManageMyItems = () => {
                     <div className="overflow-x-auto">
                         <table className="table-auto w-full border-collapse border border-gray-200">
                             <thead>
-                                <tr className="bg-gray-100">
-                                    <th className="border border-gray-200 px-4 py-2">Title</th>
-                                    <th className="border border-gray-200 px-4 py-2">Category</th>
-                                    <th className="border border-gray-200 px-4 py-2">Location</th>
-                                    <th className="border border-gray-200 px-4 py-2">Actions</th>
+                                <tr className="bg-gray-100 dark:bg-dark_bg dark:text-white">
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Title</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Category</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Location</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {items.map((item) => (
-                                    <tr key={item._id} className="hover:bg-gray-50">
-                                        <td className="border border-gray-200 px-4 py-2">{item.title}</td>
-                                        <td className="border border-gray-200 px-4 py-2">{item.category}</td>
-                                        <td className="border border-gray-200 px-4 py-2">{item.location}</td>
-                                        <td className="border border-gray-200 px-4 py-2">
+                                    <tr key={item._id} className="hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white">
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.title}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.category}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.location}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">
                                             <div className="flex justify-center gap-2">
                                                 <button
                                                     onClick={() => {

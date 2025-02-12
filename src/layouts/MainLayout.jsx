@@ -8,7 +8,7 @@ const MainLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className=''>
+            <div className='bg-light_bg dark:bg-dark_bg'>
                 <Outlet></Outlet>
                 <Toaster position='top-right'></Toaster>
             </div>

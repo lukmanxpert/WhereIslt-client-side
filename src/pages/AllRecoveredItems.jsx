@@ -34,12 +34,12 @@ const AllRecoveredItems = () => {
     }
 
     return (
-        <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50">
+        <div className="p-6 md:p-8 lg:p-12 min-h-screen bg-gray-50 dark:bg-dark_bg">
             <Helmet>
                 <title>All Recovery Items | WhereIslt</title>
             </Helmet>
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-3xl font-bold">All Recovered Items</h1>
+                <h1 className="text-3xl font-bold dark:text-white">All Recovered Items</h1>
                 <div className="flex space-x-2">
                     <button
                         onClick={() => setIsTableView(true)}
@@ -61,7 +61,7 @@ const AllRecoveredItems = () => {
             </div>
 
             {recoveredItems.length === 0 ? (
-                <p className="text-center text-gray-500">
+                <p className="text-center text-gray-500 dark:text-white">
                     No recovered items found. Start reporting lost and found items!
                 </p>
             ) : isTableView ? (
@@ -69,19 +69,19 @@ const AllRecoveredItems = () => {
                     <table className="table-auto w-full border-collapse border border-gray-200">
                         <thead>
                             <tr className="bg-gray-100">
-                                <th className="border border-gray-200 px-4 py-2">Title</th>
-                                <th className="border border-gray-200 px-4 py-2">Category</th>
-                                <th className="border border-gray-200 px-4 py-2">Location</th>
-                                <th className="border border-gray-200 px-4 py-2">Recovered Date</th>
+                                <th className="border border-gray-200 dark:border-gray-950 px-4 dark:bg-dark_bg dark:text-white py-2">Title</th>
+                                <th className="border border-gray-200 dark:border-gray-950 px-4 dark:bg-dark_bg dark:text-white py-2">Category</th>
+                                <th className="border border-gray-200 dark:border-gray-950 px-4 dark:bg-dark_bg dark:text-white py-2">Location</th>
+                                <th className="border border-gray-200 dark:border-gray-950 px-4 dark:bg-dark_bg dark:text-white py-2">Recovered Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             {recoveredItems.map((item) => (
-                                <tr key={item._id} className="hover:bg-gray-50">
-                                    <td className="border border-gray-200 px-4 py-2">{item.title}</td>
-                                    <td className="border border-gray-200 px-4 py-2">{item.category}</td>
-                                    <td className="border border-gray-200 px-4 py-2">{item.location}</td>
-                                    <td className="border border-gray-200 px-4 py-2">
+                                <tr key={item._id} className="hover:bg-gray-50 dark:hover:bg-gray-800">
+                                    <td className="border border-gray-200 dark:border-gray-950 dark:text-white px-4 py-2">{item.title}</td>
+                                    <td className="border border-gray-200 dark:border-gray-950 dark:text-white px-4 py-2">{item.category}</td>
+                                    <td className="border border-gray-200 dark:border-gray-950 dark:text-white px-4 py-2">{item.location}</td>
+                                    <td className="border border-gray-200 dark:border-gray-950 dark:text-white px-4 py-2">
                                         {item.date}
                                     </td>
                                 </tr>
@@ -94,12 +94,12 @@ const AllRecoveredItems = () => {
                     {recoveredItems.map((item) => (
                         <div
                             key={item._id}
-                            className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition"
+                            className="bg-white dark:bg-dark_bg shadow-md rounded-lg p-4 hover:shadow-lg transition"
                         >
-                            <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                            <p className="text-gray-700 mb-1">Category: {item.category}</p>
-                            <p className="text-gray-700 mb-1">Location: {item.location}</p>
-                            <p className="text-gray-500">Recovered Date: {item.date}</p>
+                            <h2 className="text-xl font-semibold mb-2 dark:text-white">{item.title}</h2>
+                            <p className="text-black dark:text-white mb-1">Category: {item.category}</p>
+                            <p className="text-black dark:text-white mb-1">Location: {item.location}</p>
+                            <p className="text-black dark:text-white">Recovered Date: {item.date}</p>
                         </div>
                     ))}
                 </div>
