@@ -40,15 +40,15 @@ const Login = () => {
         }
     };
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-dark_bg px-4 sm:px-6 lg:px-8">
             <Helmet>
                 <title>Login | WhereIsIt</title>
             </Helmet>
-            <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
-                <h2 className="text-2xl font-bold text-center">Login</h2>
+            <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-slate-950 rounded shadow-md">
+                <h2 className="text-2xl font-bold dark:text-white text-center">Login</h2>
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="email" className="block text-sm font-medium dark:text-white text-gray-700">
                             Email
                         </label>
                         <input
@@ -57,7 +57,7 @@ const Login = () => {
                             name="email"
                             placeholder="Enter your email"
                             required
-                            className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <div>
@@ -70,7 +70,7 @@ const Login = () => {
                             name="password"
                             placeholder="Enter your password"
                             required
-                            className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <button
