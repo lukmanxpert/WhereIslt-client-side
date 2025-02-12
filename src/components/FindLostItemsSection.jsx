@@ -23,8 +23,8 @@ const FindLostItemsSection = () => {
 
     if (loading) {
         return (
-            <div className="p-6 bg-gray-50 text-center">
-                <p className="text-lg">Loading latest items...</p>
+            <div className="p-6 bg-gray-50 dark:bg-dark_bg text-center">
+                <p className="text-lg dark:text-white">Loading latest items...</p>
             </div>
         );
     }
