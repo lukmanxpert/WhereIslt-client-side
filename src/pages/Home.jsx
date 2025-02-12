@@ -4,6 +4,7 @@ import FindLostItemsSection from '../components/FindLostItemsSection';
 import { Helmet } from 'react-helmet';
 import Testimonials from '../components/Testimonials';
 import Statistics from '../components/Statistics';
+import LostFoundTips from '../components/LostFoundTips';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <FindLostItemsSection></FindLostItemsSection>
             <Testimonials></Testimonials>
             <Statistics></Statistics>
+            <LostFoundTips></LostFoundTips> 
         </div>
     );
 };
