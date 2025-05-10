@@ -93,10 +93,10 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu dropdown-content bg-base-100 dark:bg-gray-800 rounded-box w-52 p-2 shadow"
+                            className="menu dropdown-content bg-white font-bold dark:bg-gray-800 rounded-box w-52 p-2 shadow"
                         >
                             <li>
-                                <button onClick={handleLogOut}>Logout</button>
+                                <button onClick={handleLogOut}>Log Out</button>
                             </li>
                         </ul>
                     </div>

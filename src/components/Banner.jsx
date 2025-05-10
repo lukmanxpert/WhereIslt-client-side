@@ -2,25 +2,27 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
-
 import 'swiper/css';
+import image1 from "../assets/banner1.jpg"
+import image2 from "../assets/banner2.jpg"
+import image3 from "../assets/banner3.jpg"
 
 const Banner = () => {
     const slides = [
         {
             title: "Welcome to WhereIsIt!",
             description: "Find lost items or reconnect them to their rightful owners.",
-            image: "https://i.ibb.co.com/KrbKtD7/pexels-rdne-6647026.jpg",
+            image: image1,
         },
         {
             title: "Lost Something?",
             description: "Report it here and increase the chances of finding it.",
-            image: "https://i.ibb.co.com/bLHCLp2/pexels-pavel-danilyuk-6754155.jpg",
+            image: image2,
         },
         {
             title: "Found Something?",
             description: "Help others by listing found items here.",
-            image: "https://i.ibb.co.com/JkHJRbn/pexels-taryn-elliott-8204484.jpg",
+            image: image3,
         },
     ];
 
