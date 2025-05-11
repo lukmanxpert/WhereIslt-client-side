@@ -82,7 +82,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-6">
                 <div className="hidden lg:flex">
-                    <ul className="menu menu-horizontal items-center gap-4 px-1">
+                    <ul className="menu menu-horizontal items-center gap-4 px-1 group-hover">
                         {links}
                     </ul>
                 </div>

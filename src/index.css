@@ -17,3 +17,10 @@ body{
     display: inline-block;
 }
 
+.group-hover > a:hover{
+    color: #FF9800;
+}
+
+.group-hover > .active:hover{
+    color: white;
+}
