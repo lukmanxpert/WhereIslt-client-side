@@ -113,19 +113,19 @@ const ManageMyItems = () => {
                         <table className="table-auto w-full border-collapse border border-gray-200">
                             <thead>
                                 <tr className="bg-gray-100 dark:bg-dark_bg dark:text-white">
-                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Title</th>
-                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Category</th>
-                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Location</th>
-                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2">Actions</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">Title</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">Category</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">Location</th>
+                                    <th className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {items.map((item) => (
                                     <tr key={item._id} className="hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white">
-                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.title}</td>
-                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.category}</td>
-                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">{item.location}</td>
-                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2">
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">{item.title}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">{item.category}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">{item.location}</td>
+                                        <td className="border border-gray-200 dark:border-gray-950 px-4 py-2 text-black dark:text-slate-200">
                                             <div className="flex justify-center gap-2">
                                                 <button
                                                     onClick={() => {
@@ -153,53 +153,59 @@ const ManageMyItems = () => {
             </div>
 
             <dialog id="my_modal_4" className="modal">
-                <div className="modal-box w-11/12 max-w-5xl">
-                    <h3 className="font-bold text-lg mb-4">Update Item</h3>
+                <div className="modal-box w-11/12 max-w-5xl bg-slate-200 dark:bg-slate-900">
+                    <h3 className="font-bold text-lg mb-4 text-black dark:text-white">Update Item</h3>
                     <form onSubmit={handleUpdate}>
                         <div className="py-4">
-                            <label className="block mb-2">Title</label>
+                            <label className="block mb-2 text-black dark:text-white">Title</label>
                             <input
                                 type="text"
                                 name="title"
+                                required
                                 defaultValue={selectedItem?.title}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
-                            <label className="block mb-2">Thumbnail</label>
+                            <label className="block mb-2 text-black dark:text-white">Thumbnail</label>
                             <input
                                 type="url"
                                 name="thumbnail"
+                                required
                                 defaultValue={selectedItem?.thumbnail}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
-                            <label className="block mb-2">Description</label>
+                            <label className="block mb-2 text-black dark:text-white">Description</label>
                             <input
                                 type="text"
                                 name="description"
+                                required
                                 defaultValue={selectedItem?.description}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
 
-                            <label className="block mb-2">Category</label>
+                            <label className="block mb-2 text-black dark:text-white">Category</label>
                             <input
                                 type="text"
                                 name="category"
+                                required
                                 defaultValue={selectedItem?.category}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
 
-                            <label className="block mb-2">Location</label>
+                            <label className="block mb-2 text-black dark:text-white">Location</label>
                             <input
                                 type="text"
                                 name="location"
+                                required
                                 defaultValue={selectedItem?.location}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
-                            <label className="block mb-2">Date</label>
+                            <label className="block mb-2 text-black dark:text-white">Date</label>
                             <input
                                 type="date"
                                 name="date"
+                                required
                                 defaultValue={selectedItem?.date}
-                                className="input input-bordered w-full mb-4"
+                                className="input text-black dark:text-slate-200 input-bordered bg-slate-100 dark:bg-slate-800 w-full mb-4"
                             />
                         </div>
                         <div className="modal-action">

@@ -69,7 +69,7 @@ const AddLostAndFoundItems = () => {
                         name="type"
                         value={formData.type}
                         onChange={handleChange}
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full bg-white text-black dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     >
                         <option value="Lost">Lost</option>
                         <option value="Found">Found</option>
@@ -86,7 +86,7 @@ const AddLostAndFoundItems = () => {
                         value={formData.thumbnail}
                         onChange={handleChange}
                         placeholder="Enter image URL"
-                        className="w-full dark:bg-dark_bg bg-white dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black dark:bg-dark_bg bg-white dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
 
@@ -100,7 +100,7 @@ const AddLostAndFoundItems = () => {
                         value={formData.title}
                         onChange={handleChange}
                         placeholder="Enter item title"
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
 
@@ -113,7 +113,7 @@ const AddLostAndFoundItems = () => {
                         value={formData.description}
                         onChange={handleChange}
                         placeholder="Enter item description"
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                         rows="4"
                     ></textarea>
                 </div>
@@ -128,7 +128,7 @@ const AddLostAndFoundItems = () => {
                         value={formData.category}
                         onChange={handleChange}
                         placeholder="e.g., Electronics, Documents"
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
 
@@ -142,7 +142,7 @@ const AddLostAndFoundItems = () => {
                         value={formData.location}
                         onChange={handleChange}
                         placeholder="Enter the location"
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
 
@@ -155,7 +155,7 @@ const AddLostAndFoundItems = () => {
                         required
                         value={formData.date}
                         onChange={handleChange}
-                        className="w-full bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                        className="w-full text-black bg-white dark:bg-dark_bg dark:text-white border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
                     />
                 </div>
 
