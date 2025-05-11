@@ -36,7 +36,7 @@ const FindLostItemsSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <h2 className="text-2xl md:text-3xl dark:text-white font-bold text-center mb-6">
+            <h2 className="text-2xl md:text-3xl text-black dark:text-white font-bold text-center mb-6">
                 Latest Find & Lost Items
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -59,7 +59,7 @@ const FindLostItemsSection = () => {
                                     className="w-full h-40 object-cover"
                                 />
                                 <div className="p-4">
-                                    <h3 className="text-lg font-bold truncate dark:text-white">{item.title}</h3>
+                                    <h3 className="text-lg font-bold text-black truncate dark:text-white">{item.title}</h3>
                                     <p className="text-sm text-gray-600 truncate dark:text-gray-100">{item.description.substring(0, 20)}...</p>
                                     <p className="text-xs text-gray-500 mt-2 mb-4 dark:text-gray-100">
                                         {new Date(item.date).toLocaleDateString()}

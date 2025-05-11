@@ -31,7 +31,7 @@ const Testimonials = () => {
     return (
         <section className="bg-light_bg dark:bg-dark_bg py-10 ">
             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-2xl font-bold mb-6 dark:text-white">What Our Users Say</h2>
+                <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">What Our Users Say</h2>
                 <Swiper
                     modules={[Navigation, Pagination]}
                     navigation
@@ -71,7 +71,7 @@ const Testimonials = () => {
                                     alt={testimonial.name}
                                     className="w-16 h-16 mx-auto rounded-full mb-4"
                                 />
-                                <h3 className="text-lg dark:text-white font-semibold">{testimonial.name}</h3>
+                                <h3 className="text-lg text-black dark:text-white font-semibold">{testimonial.name}</h3>
                                 <p className="text-gray-600 mt-2 dark:text-gray-100">{testimonial.feedback}</p>
                                 <div className="text-yellow-500 mt-2">
                                     {"★".repeat(Math.floor(testimonial.rating))}

@@ -54,8 +54,8 @@ const PostDetailsPage = () => {
       });
   };
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
+    <div className="p-6 bg-gray-50 dark:bg-slate-900 min-h-screen">
+      <h1 className="text-3xl text-black dark:text-white md:text-4xl font-bold text-center mb-6">
         {item?.title}
       </h1>
       <div className="w-full h-72 md:h-96 lg:h-[500px] mb-8">
@@ -67,41 +67,41 @@ const PostDetailsPage = () => {
       </div>
       <div className="space-y-6 px-4 lg:px-16">
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl dark:text-white font-semibold text-gray-800 mb-2">
             Type
           </h2>
-          <p className="text-gray-700">{item?.type}</p>
+          <p className="text-gray-700 dark:text-slate-300">{item?.type}</p>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl dark:text-white font-semibold text-gray-800 mb-2">
             Description
           </h2>
-          <p className="text-gray-700">{item?.description}</p>
+          <p className="text-gray-700 dark:text-slate-300">{item?.description}</p>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl font-semibold dark:text-white text-gray-800 mb-2">
             Category
           </h2>
-          <p className="text-gray-700">{item?.category}</p>
+          <p className="text-gray-700 dark:text-slate-300">{item?.category}</p>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl font-semibold dark:text-white text-gray-800 mb-2">
             Location
           </h2>
-          <p className="text-gray-700">{item?.location}</p>
+          <p className="text-gray-700 dark:text-slate-300">{item?.location}</p>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">Date</h2>
-          <p className="text-gray-700">{new Date(item?.date).toLocaleDateString()}</p>
+          <h2 className="text-xl font-semibold dark:text-white text-gray-800 mb-2">Date</h2>
+          <p className="text-gray-700 dark:text-slate-300">{new Date(item?.date).toLocaleDateString()}</p>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl dark:text-white font-semibold text-gray-800 mb-2">
             Contact Information
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-slate-300">
             <strong>Name:</strong> {item?.contactInfo?.name}
           </p>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-slate-300">
             <strong>Email:</strong> {item?.contactInfo?.email}
           </p>
         </div>
@@ -118,41 +118,41 @@ const PostDetailsPage = () => {
         )}
       </div>
       <dialog id="my_modal_4" className="modal">
-        <div className="modal-box w-11/12 max-w-5xl">
+        <div className="modal-box w-11/12 max-w-5xl bg-slate-100 dark:bg-slate-900">
           {/* Modal Header */}
-          <h3 className="font-bold text-2xl text-gray-800">Item Recovery Information</h3>
-          <p className="text-sm text-gray-500 mt-1">Please provide the details below to proceed.</p>
+          <h3 className="font-bold text-2xl text-gray-800 dark:text-white">Item Recovery Information</h3>
+          <p className="text-sm text-gray-500 mt-1 dark:text-slate-200">Please provide the details below to proceed.</p>
 
           {/* Modal Content */}
           <form onSubmit={handleSubmit} method="dialog" className="py-4 space-y-6">
             {/* Item Details */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-700">Item Details</h4>
-              <p className="text-gray-600">
+              <h4 className="text-lg font-semibold text-gray-700 dark:text-white">Item Details</h4>
+              <p className="text-gray-600 dark:text-slate-200">
                 <strong>Title:</strong> {item?.title}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-slate-200">
                 <strong>Category:</strong> {item?.category}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-slate-200">
                 <strong>Location:</strong> {item?.location}
               </p>
             </div>
 
             {/* Recovery Details */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-700">Recovery Information</h4>
-              <label className="block text-gray-700 font-medium mb-1">Recovered Location</label>
+              <h4 className="text-lg font-semibold text-gray-700 dark:text-white">Recovery Information</h4>
+              <label className="block text-gray-700 font-medium mb-1 dark:text-slate-200">Recovered Location</label>
               <input
                 type="text"
                 name="recoveredLocation"
                 placeholder="Enter the location"
                 required
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
+                className="w-full border-2 dark:bg-slate-900 bg-slate-100 outline-none rounded-md p-2 focus:ring-2 focus:ring-blue-400"
               />
-              <label className="block text-gray-700 font-medium mt-4 mb-1">Recovered Date</label>
+              <label className="block text-gray-700 font-medium mt-4 mb-1 dark:text-slate-200">Recovered Date</label>
               <DatePicker
-                className='border p-2 rounded-md'
+                className='border-2 dark:bg-slate-900 p-2 bg-slate-100 rounded-md'
                 selected={date}
                 onChange={date => setDate(date)}
               />
@@ -160,11 +160,11 @@ const PostDetailsPage = () => {
 
             {/* User Information */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-700">Your Information</h4>
-              <p className="text-gray-600">
+              <h4 className="text-lg font-semibold text-gray-700 dark:text-slate-200">Your Information</h4>
+              <p className="text-gray-600 dark:text-slate-200">
                 <strong>Name:</strong> {user?.displayName}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-slate-200">
                 <strong>Email:</strong> {user?.email}
               </p>
             </div>

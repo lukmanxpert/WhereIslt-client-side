@@ -94,7 +94,7 @@ const LostAndFound = () => {
                                 alt={item.title}
                                 className="w-full h-40 object-cover rounded-md mb-4"
                             />
-                            <h2 className="text-xl font-semibold mb-2 dark:text-white">{item.title}</h2>
+                            <h2 className="text-xl font-semibold mb-2 text-black dark:text-white">{item.title}</h2>
                             <p className="text-gray-700 mb-2 dark:text-gray-100">Location: {item.location}</p>
                             <p className="text-gray-500 mb-2 dark:text-gray-100">Type: {item.type}</p>
                             <p className="text-gray-500 mb-4 dark:text-gray-100">Date: {item.date}</p>
