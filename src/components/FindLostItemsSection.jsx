@@ -64,7 +64,7 @@ const FindLostItemsSection = () => {
                                     <p className="text-xs text-gray-500 mt-2 mb-4 dark:text-gray-100">
                                         {new Date(item.date).toLocaleDateString()}
                                     </p>
-                                    <Link to={`${user ? `/details/${item._id}` : '/login'}`} className="mt-4 px-4 py-2 bg-transparent hover:scale-105 text-[#FF9800] font-bold rounded-md border-2 border-[#FF9800] transition">
+                                    <Link to={`${user ? `/details/${item._id}` : '/login'}`} className="mt-4 px-4 py-2 bg-transparent hover:scale-105 text-[#FF9800] font-bold rounded-md border-2 border-[#FF9800] transition hover:bg-[#FF9800] hover:text-white">
                                         View Details
                                     </Link>
                                 </div>
