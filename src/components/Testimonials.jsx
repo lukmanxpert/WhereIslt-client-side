@@ -10,7 +10,7 @@ const Testimonials = () => {
     const testimonials = [
         {
             name: "Jane Doe",
-            feedback: "I found my lost wallet within a day! This platform is a lifesaver.",
+            feedback: "I found my lost wallet within a day! This platform is good.",
             image: "https://i.ibb.co.com/TLxnRm7/images.jpg",
             rating: 5,
         },

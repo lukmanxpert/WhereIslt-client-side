@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
     overflow-y: scroll;
+    font-family: "Roboto", sans-serif;
 }
 
 .active {
-    background-color: #FF9800; /* Orange */
+    background-color: #FF9800;
+    /* Orange */
     color: white;
     font-weight: bold;
     border-radius: 4px;
@@ -17,10 +21,10 @@ body{
     display: inline-block;
 }
 
-.group-hover > a:hover{
+.group-hover>a:hover {
     color: #FF9800;
 }
 
-.group-hover > .active:hover{
+.group-hover>.active:hover {
     color: white;
 }
