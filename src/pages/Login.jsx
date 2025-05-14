@@ -45,7 +45,7 @@ const Login = () => {
                 <title>Login | WhereIsIt</title>
             </Helmet>
             <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-slate-950 rounded shadow-md">
-                <h2 className="text-2xl font-bold dark:text-white text-center">Login</h2>
+                <h2 className="text-2xl font-bold text-black dark:text-white text-center">Login</h2>
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium dark:text-white text-gray-700">
@@ -57,7 +57,7 @@ const Login = () => {
                             name="email"
                             placeholder="Enter your email"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <div>
@@ -70,7 +70,7 @@ const Login = () => {
                             name="password"
                             placeholder="Enter your password"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <button

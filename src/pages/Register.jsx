@@ -60,7 +60,7 @@ const Register = () => {
                 <title>Register | WhereIsIt</title>
             </Helmet>
             <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-slate-950 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold text-center dark:text-white">Register</h2>
+                <h2 className="text-2xl font-bold text-center text-black dark:text-white">Register</h2>
                 <form onSubmit={handleRegister} className="space-y-4">
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white">
@@ -73,7 +73,7 @@ const Register = () => {
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Enter your name"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <div>
@@ -87,7 +87,7 @@ const Register = () => {
                             onChange={(e) => setPhotoUrl(e.target.value)}
                             placeholder="Enter your photo URL"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <div>
@@ -101,7 +101,7 @@ const Register = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <div>
@@ -115,7 +115,7 @@ const Register = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Enter your password"
                             required
-                            className="w-full dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+                            className="w-full bg-white dark:bg-dark_bg px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
                         />
                     </div>
                     <button
