@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 import 'swiper/css';
 import image1 from "../assets/banner1.jpg"
 import image2 from "../assets/banner2.jpg"
 import image3 from "../assets/banner3.jpg"
 
 const Banner = () => {
+    const navigate = useNavigate()
     const slides = [
         {
             title: "Welcome to WhereIsIt!",
@@ -73,6 +75,15 @@ const Banner = () => {
                                             >
                                                 {slide.description}
                                             </motion.p>
+                                            <motion.button
+                                                variants={contentVariants}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="hidden"
+                                                className="py-2 px-4 border-2 border-primary mt-4 rounded font-semibold hover:bg-primary transition hover:text-white"
+                                                onClick={() => navigate("/lost-and-found-items")}>
+                                                Get Started
+                                            </motion.button>
                                         </>
                                     )}
                                 </AnimatePresence>
