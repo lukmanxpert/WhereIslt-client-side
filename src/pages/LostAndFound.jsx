@@ -57,7 +57,7 @@ const LostAndFound = () => {
     return (
         <div className="p-4 bg-light_bg dark:bg-dark_bg md:p-8 lg:p-12">
             <Helmet>
-                <title>Lost and Found Items | WhereIslt</title>
+                <title>Lost and Found Items | WhereIsIt</title>
             </Helmet>
             <h1 className="text-2xl font-bold text-center mb-6 text-black dark:text-white">Lost & Found Items</h1>
 
@@ -87,7 +87,7 @@ const LostAndFound = () => {
                     {filteredItems.map((item) => (
                         <div
                             key={item._id}
-                            className="bg-white dark:bg-dark_bg shadow-md rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow"
+                            className="bg-white dark:bg-dark_bg dark:border dark:border-gray-700 shadow-md rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow"
                         >
                             <img
                                 src={item.thumbnail || "https://via.placeholder.com/150"}
