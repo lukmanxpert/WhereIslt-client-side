@@ -29,19 +29,15 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-
+    
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
-            if (user.email) {
-                const result = await axiosPublic.post("/jwt", user).then((data) => {
-                    return data.data
-                })
-                setUser(user);
-            }
+        const unsubscribe = onAuthStateChanged(auth, async(user) => {
+            setUser(user);
+            const result = await axiosPublic.post("/jwt", user)
             setLoading(false);
         });
         return unsubscribe;
-    }, []);
+    }, [user]);
 
     const authInfo = {
         user,

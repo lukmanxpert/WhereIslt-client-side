@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import useAxiosPrivate from "../hooks/axiosPrivate";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    const axiosPrivate = useAxiosPrivate()
 
     const [darkMode, setDarkMode] = useState(
         localStorage.getItem("theme") === "dark" ||
@@ -23,6 +25,8 @@ const Navbar = () => {
     const handleLogOut = async () => {
         try {
             await signOutUser();
+            const result = await axiosPrivate.post("/logout")
+            console.log("logout", result);
         } catch (error) {
             console.error(error);
         }
