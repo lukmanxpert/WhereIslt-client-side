@@ -5,8 +5,10 @@ import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 import axios from "axios";
 import toast from "react-hot-toast";
+import useAxiosPrivate from "../hooks/axiosPrivate";
 
 const PostDetailsPage = () => {
+  const axiosPrivate = useAxiosPrivate()
   const { user } = useContext(AuthContext);
   const [date, setDate] = useState(new Date());
   const [item, setItem] = useState([]);
@@ -14,14 +16,23 @@ const PostDetailsPage = () => {
   console.log(item.recovered);
   console.log(isRecovered);
   const { id } = useParams();
+
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_serverUrl}/posts/${id}`)
-      .then((response) => response.json())
+    axiosPrivate(`/posts/${id}`)
       .then((data) => {
-        setItem(data);
-        setIsRecovered(data.recovered);
+        setItem(data.data);
+        console.log(data.data);
+        setIsRecovered(data.data.recovered);
       });
   }, [id]);
+
+  // useEffect(async () => {
+  //   const result = await axiosPrivate.get(`/posts/${id}`)
+  //     .then((data) => setItem(data.data))
+  //     .catch((error) => console.log(error))
+  //   console.log(result);
+  // }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const recoveredLocation = e.target.recoveredLocation.value;

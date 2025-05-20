@@ -29,13 +29,17 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async(user) => {
             setUser(user);
             const result = await axiosPublic.post("/jwt", user)
+            localStorage.setItem("token", result.data.token)
             setLoading(false);
         });
+        if (!user?.email) {
+            localStorage.removeItem("token")
+        }
         return unsubscribe;
     }, [user]);
 

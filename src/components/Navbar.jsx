@@ -25,8 +25,8 @@ const Navbar = () => {
     const handleLogOut = async () => {
         try {
             await signOutUser();
-            const result = await axiosPrivate.post("/logout")
-            console.log("logout", result);
+            await axiosPrivate.post("/logout")
+            localStorage.removeItem("token")
         } catch (error) {
             console.error(error);
         }
